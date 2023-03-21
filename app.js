@@ -1,12 +1,12 @@
 
 // Game variables
-const wordBank = ['apple'];
 let wordInPlay = "";
 let wordArray = [];
 let displayArray = [];
 let displayWord = "";
 let currentLetter = "";
 let chosenLetters = [];
+let setLettersTried = [];
 let lives = 3;
 
 // DOM variables
@@ -18,6 +18,7 @@ const guessLetterBtn = document.getElementById('guess-letter');
 const wordDisplayEl = document.getElementById('word-display');
 const livesEl = document.getElementById('lives');
 const lettersTriedEl = document.getElementById('letters-tried');
+const statusEl = document.getElementById('status');
 
     //Text entries
 const enterLetter = document.getElementById('enter-letter');
@@ -42,6 +43,8 @@ function newGame() {
     //Set starting display
     wordDisplayEl.textContent = displayWord;
     livesEl.textContent = `Lives left: ${lives}`;
+    lettersTriedEl.textContent = 'Tried so far:';
+    statusEl.textContent = '';
 }
 
 //Function called when "Go!" button is pressed
@@ -67,7 +70,8 @@ function goodGuess() {
             chosenLetters.push(currentLetter);
             //Change displays
             wordDisplayEl.textContent = displayWord;
-            lettersTriedEl.textContent = `Tried so far: ${chosenLetters}`;
+            setLettersTried = [...new Set(chosenLetters)];
+            lettersTriedEl.textContent = `Tried so far: ${setLettersTried}`;
         }
     })
     //Check if game has been won
@@ -79,7 +83,8 @@ function badGuess() {
     lives--;
     chosenLetters.push(currentLetter);
     //Change displays
-    lettersTriedEl.textContent = `Tried so far: ${chosenLetters}`;
+    setLettersTried = [...new Set(chosenLetters)];
+    lettersTriedEl.textContent = `Tried so far: ${setLettersTried}`;
     livesEl.textContent = `Lives left ${lives}`;
     //Check if game has been lost
     winOrLose();
@@ -88,11 +93,11 @@ function badGuess() {
 function winOrLose() {
     //Check if game has been won
     if (wordInPlay === displayWord.replace(/\s/g, '')) {
-        return alert('WINNER!')
+        statusEl.textContent = `You've won!`
     }
     //Check if game has been lost
     if (lives === 0) {
-        return alert('LOSER!')
+        statusEl.textContent = `You've lost!`
     }
 }
 
