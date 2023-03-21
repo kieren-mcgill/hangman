@@ -10,25 +10,13 @@
     <title>Hangman</title>
 </head>
 <body>
-<div class="word-display">
-    <p id="word-display"></p>
-</div>
-<div class="used">
+    <p class="word-display" id="word-display">_ _ _ _ _ _ </p>
+    <p class="used-letters" id="letters-tried">Tried so far:</p>
+    <p class="lives" id="lives">Lives left:</p>
 
-</div>
-<div class="lives">
+    <input type="text" id="enter-letter" name="enter-letter" />
+    <button type="submit" id="guess-letter">Go!</button>
 
-</div>
-<div class="guess">
-    <form>
-        <label for="guess"></label>
-        <input type="text" id="guess" name="guess">
-        <button type="submit" id="submit">Go!</button>
-    </form>
-
-</div>
-<div class="restart">
-
-</div>
+    <button type="submit" id="new-game" >New game</button>
 </body>
 </html>
