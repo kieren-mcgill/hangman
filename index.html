@@ -11,14 +11,32 @@
     <title>Hangman</title>
 </head>
 <body>
-    <p class="word-display" id="word-display">_ _ _ _ _ _ </p>
-    <p class="used-letters" id="letters-tried">Tried so far:</p>
-    <p class="lives" id="lives">Lives left:</p>
-    <p class="status" id="status"></p>
-
-    <input type="text" id="enter-letter" name="enter-letter" />
-    <button type="submit" id="guess-letter">Go!</button>
-
-    <button type="submit" id="new-game" >New game</button>
+<div class="background">
+    <h1>Hangman</h1>
+    <div class="game">
+        <div class="interface container">
+            <p class="word-display" id="word-display">_ _ _ _ _ _ _</p>
+            <p class="used-letters" id="letters-tried">Tried so far:</p>
+            <p class="lives" id="lives">Lives left:</p>
+            <p class="status" id="status"></p>
+            <div class="inputs">
+                <input type="text" id="enter-letter" name="enter-letter" maxlength="1"/>
+                <button type="submit" id="guess-letter">Guess letter</button>
+                <button type="submit" id="new-game">New game</button>
+            </div>
+        </div>
+        <div class="noose">
+            <div class="gallows part-5" id="gallows-part-5"></div>
+            <div class="gallows part-4" id="gallows-part-4"></div>
+            <div class="gallows part-3" id="gallows-part-3"></div>
+            <div class="gallows part-2" id="gallows-part-2"></div>
+            <div class="gallows part-1" id="gallows-part-1"></div>
+            <div class="gallows part-0" id="gallows-part-0"></div>
+                <p class="win-lose" id="win">You win!</p>
+                <p class="win-lose" id="lose">You lose!</p>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

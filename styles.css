@@ -1,3 +1,136 @@
-.word-display {
-    font-size: 5em;
+@font-face {
+    font-family: CarnivaleeFreakshow;
+    src: url(fonts/CarnivaleeFreakshow-DLrm.ttf);
 }
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: CarnivaleeFreakshow, serif;
+    font-size: 8em;
+    padding: 0;
+    margin: 0;
+}
+
+.background {
+    align-items: center;
+    background-image: url("images/wildwest-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+.game {
+    font-family: sans-serif;
+    font-size: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.word-display {
+    font-size: 6rem;
+}
+
+input {
+    border: black solid 2px;
+    border-radius: 5px;
+    font-size: 1rem;
+    height: 3em;
+    width: 4em
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+button {
+    background-color: burlywood;
+    border: black solid 2px;
+    border-radius: 5px;
+    font-size: inherit;
+    height: 3rem;
+
+}
+
+.noose {
+    background-color: burlywood;
+    border-radius: 25px;
+    height: 500px;
+    width: 400px;
+    margin: 50px;
+    position: relative;
+}
+
+.gallows {
+    background-image: url("images/wood-texture.jpeg");
+    position: absolute;
+    display: none;
+}
+
+.part-5 {
+    height: 400px;
+    width: 30px;
+    bottom: 50px;
+    right: 50px
+}
+
+.part-4 {
+    height: 30px;
+    width: 300px;
+    bottom: 450px;
+    right: 50px;
+}
+
+.part-3 {
+    height: 100px;
+    width: 20px;
+    bottom: 370px;
+    right: 100px;
+    rotate: -45deg;
+}
+
+.part-2 {
+    height: 100px;
+    width: 20px;
+    bottom: 350px;
+    right: 330px;
+}
+
+.part-1 {
+    height: 60px;
+    width: 60px;
+    bottom: 300px;
+    border-radius: 100%;
+    right: 310px;
+}
+
+.part-0 {
+    height: 100px;
+    width: 20px;
+    bottom: 202px;
+    right: 330px;
+}
+
+.win-lose {
+    display: none;
+    color: darkred;
+    font-family: CarnivaleeFreakshow, serif;
+    font-size: 10rem;
+    position: absolute;
+    rotate: -45deg;
+    bottom: 130px;
+    left: 50px;
+    margin: 0;
+    padding: 0
+}
+
