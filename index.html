@@ -6,21 +6,26 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
     <script src="words.js"></script>
     <script src="app.js" defer></script>
     <title>Hangman</title>
 </head>
 <body>
 <div class="background">
+
     <h1>Hangman</h1>
     <div class="game">
         <div class="interface container">
             <p class="word-display" id="word-display">_ _ _ _ _ _ _</p>
             <p class="used-letters" id="letters-tried">Tried so far:</p>
             <p class="lives" id="lives">Lives left:</p>
-            <p class="status" id="status"></p>
             <div class="inputs">
-                <input type="text" id="enter-letter" name="enter-letter" maxlength="1"/>
+                <div class="input-box">
+                    <input type="text" id="enter-letter" name="enter-letter" maxlength="1"/>
+                </div>
                 <button type="submit" id="guess-letter">Guess letter</button>
                 <button type="submit" id="new-game">New game</button>
             </div>
@@ -37,6 +42,5 @@
             </div>
         </div>
     </div>
-</div>
 </body>
 </html>

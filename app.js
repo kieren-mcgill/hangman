@@ -27,7 +27,8 @@ const enterLetter = document.getElementById('enter-letter');
 newGameBtn.onclick = newGame;
 guessLetterBtn.onclick = gameTurn;
 
-// Game functions
+//On page load
+newGame()
 
 //Function called when "New game" button is pressed
 function newGame() {
@@ -43,11 +44,11 @@ function newGame() {
     wordDisplayEl.textContent = displayWord;
     livesEl.textContent = `Lives left: ${lives}`;
     lettersTriedEl.textContent = 'Tried so far:';
-    statusEl.textContent = '';
-    document.querySelectorAll('.gallows, .win-lose').forEach((el) => el.style.display = "none");
+    document.querySelectorAll('.gallows, .win-lose').forEach((el) => el.style.display = 'none');
+    enterLetter.value = "";
 }
 
-//Function called when "Go!" button is pressed
+//Function called when "Guess letter" button is pressed
 function gameTurn() {
     currentLetter = enterLetter.value;
     //Check that the entered letter hasn't already been tried
@@ -100,7 +101,6 @@ function winOrLose() {
     }
     //Check if game has been lost
     if (lives === 0) {
-        statusEl.textContent = `You've lost!`
         document.getElementById('lose').style.display = 'block';
     }
 }
